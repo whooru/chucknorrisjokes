@@ -29,11 +29,13 @@ class MainActivity : AppCompatActivity() {
         println(savedInstanceState)
         jokesFragment = JokesFragment()
         webFragment = WebFragment()
+
         jokesButton.setOnClickListener {
             chooseFragment(fragmentManager, jokesFragment!!)
             jokesButton.setBackgroundResource(R.drawable.custom_button_pressed)
             webButton.setBackgroundResource(R.drawable.custom_button)
         }
+        jokesButton.callOnClick()
         webButton.setOnClickListener {
             chooseFragment(fragmentManager, webFragment!!)
             jokesButton.setBackgroundResource(R.drawable.custom_button)
